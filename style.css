@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.content {
+    height: 700vh;
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding: 10rem;
+}
+
+.sidebar {
+    background-color: #c89ef0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 700vh;
+    opacity: 0.8;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav a {
+    display: block;
+    margin: 0.5rem;
+    background-color: darkcyan;
+}
+
+.sidebar-nav a:hover {
+    font-size: large;
+}
+
+.imgparstyle {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-40%, 0%);
+    border: 3px dashed blueviolet;
+
+}
+
+.paragraphstyle {
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    min-width: 0.5rem;
+}
+
+.imgstyle {
+    max-width: 100%;
+}
+.cast-grid {
+    display: grid;
+}
+
+.cast-grid-column {
+    width: 100%;
+    padding: 0 0.5rem;
+}
+
+.cast {
+    padding: 0.5rem;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    border-radius: 0.5rem;
+   
+}
+.castimg{
+    width: 90px;
+    height: 120px;
+    border-radius: 100% ;
+    margin-left: 25%;
+}
+@media screen and (min-width:1000px) {
+    .sidebar {
+        flex: 1;
+        padding: 0.5rem;
+    }
+
+    .content {
+        flex: 4;
+    }
+
+    .imgparstyle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+    }
+    .cast-grid {
+        display: flex;
+    }
+    .cast-grid-column {
+        width: 33.33%;
+    }
+}
