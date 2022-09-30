@@ -12,3 +12,4 @@ function toggleNav() {
 
 let button = document.getElementById('navToggleButton');
 button.addEventListener('click', toggleNav);
+

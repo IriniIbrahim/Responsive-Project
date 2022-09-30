@@ -38,25 +38,46 @@ html {
   font-size: 16px;
   font-family: "Patrick Hand", cursive;
 }
-
 .content {
-  height: 1000vh;
-  background-image: url("background.jpg");
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  padding: 7rem;
-}
-.contentimg {
-  height: 1000vh;
+  height: 600vh;
   background-image: url("background.jpg");
   background-attachment: fixed;
   background-size: 100% 100%;
   padding: 8rem;
 }
+
 .Positioning {
   position: fixed;
   bottom: 30px;
   right: 30px;
+}
+
+.site-header__search-container {
+  position: fixed; 
+  right: 10px;
+}
+.navSearchButton{
+  float: left;
+  width: 30%;
+  padding: 5px;
+  background:darkcyan;
+  color: white;
+  font-size: 17px;
+  border: 2px solid black;
+  cursor: pointer;
+  text-align: center;
+  color: #c89ef0;
+}
+.navSearchButton:hover{
+    background:rgb(1, 71, 71);
+}
+.input{
+  padding: 5px;
+  font-size: 17px;
+  border: 2px solid black;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
 }
 
 .site-header__container {
@@ -74,6 +95,9 @@ html {
   background-color: darkcyan;
   color: #c89ef0;
 }
+.toggle__button:hover{
+  background:rgb(1, 71, 71);
+}
 .par {
   padding: 50px;
 }
@@ -85,13 +109,13 @@ html {
   height: 100%;
   opacity: 0.8;
   transform: translateX(-100%);
-    transition: transform 0.5s;
-    top: 55px;
-    bottom: 0;
-  }
-  
-  .sidebar--active {
-    transform: translateX(0);
+  transition: transform 0.5s;
+  top: 55px;
+  bottom: 0;
+}
+
+.sidebar--active {
+  transform: translateX(0);
 }
 
 .sidebar-nav ul {
@@ -103,9 +127,10 @@ html {
   margin: 0.5rem;
   background-color: darkcyan;
   text-decoration: none;
-  border: black solid 0.5rem;
-    border-radius: 5px;
-    text-align: center;
+  border: black solid 0.2rem;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px;
 }
 
 .sidebar-nav a:hover {
@@ -121,23 +146,30 @@ html {
   border: 3px dashed blueviolet;
 }
 
+.content__loc {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-45%, 0%);
+  /*border: 3px dashed blueviolet;*/
+  width: 60%;
+}
+
 .paragraphstyle {
-  background-color: black;
-  opacity: 0.8;
+  background-color: #222222c1;
   color: white;
   min-width: 0.5rem;
 }
 
 .section-header {
-  background-color: #c89ef0;
+  background-color: #c89ef0b8;
   padding: 20px;
-  opacity: 0.8;
-  color: blueviolet;
+  color: rgba(137, 43, 226, 0.655);
   margin-top: 5px;
   margin-bottom: 5px;
   text-align: center;
 }
-
+ 
 .imgstyle {
   max-width: 100%;
 }
@@ -149,7 +181,7 @@ html {
 }
 
 .ratings {
-  background-color: darkcyan;
+  background-color: rgba(0, 139, 139, 0.666);
   width: 100%;
   list-style: none;
   display: flex;
@@ -180,8 +212,7 @@ html {
 
 .cast {
   padding: 0.5rem;
-  background-color: darkcyan;
-  opacity: 0.8;
+  background-color: rgba(0, 139, 139, 0.666);
   color: white;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -195,10 +226,10 @@ html {
   margin-left: 25%;
   cursor: pointer;
   transition: transform 1s;
-  }
-  
-  .castimg:hover {
-    transform: rotateY(360deg);
+}
+
+.castimg:hover {
+  transform: rotateY(360deg);
 }
 
 .Compareheader {
@@ -248,8 +279,7 @@ html {
 }
 
 .locstyle {
-  background-color: black;
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.688);
   color: white;
 }
 
@@ -318,9 +348,11 @@ html {
     padding: 0.5rem;
     transform: translateX(0);
   }
-.sidebar-nav {
-  transform: translateX(0);
-}
+
+  .sidebar-nav {
+    transform: translateX(0);
+  }
+
   .content {
     flex: 4;
   }
@@ -348,10 +380,12 @@ html {
     width: 100%;
     height: 829px;
   }
-.Compareheader {
-  font-size: large;
-}
-    .sidebar-nav a {
-      font-size: larger;
-    }
+
+  .Compareheader {
+    font-size: large;
+  }
+
+  .sidebar-nav a {
+    font-size: larger;
+  }
 }

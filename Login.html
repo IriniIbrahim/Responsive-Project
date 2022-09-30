@@ -9,16 +9,17 @@
     <header class="site-header">
        <div class="site-header__container" id="navContainer">
         <button class="toggle__button" id="navToggleButton">&#9776;</button>
+        <div class="site-header__search-container" id="navSearchContainer">
+          <form class="site-header__search" >
+            <input type="text" class="input"  placeholder="Search.." />
+            <button id="navSearchButton" class="navSearchButton">Search</button>
+          </form>
+        </div>
     </div>
       <a name="top"></a>
       <div class="Positioning">
-        <a href="#top"
-          ><img
-            src="eb6822b7864d986d1b02236573fd4f91.png"
-            width="100px"
-            height="120px"
-        /></a>
-      </div>
+            <a href="#top"><img src="eb6822b7864d986d1b02236573fd4f91.png" width="80px" height="100px" /></a>
+        </div>
     </header>
      <aside class="sidebar" id="sidebar">
     <nav class="sidebar-nav">
@@ -58,6 +59,15 @@
                 </div>
     </div>
     <footer class="site-footer"></footer>
-   <script src="script.js"></script>
+   <script>
+    
+function toggleNav() {
+    let aside = document.getElementById('sidebar');
+    aside.classList.toggle('sidebar--active');
+}
+
+let button = document.getElementById('navToggleButton');
+button.addEventListener('click', toggleNav);
+   </script>
   </body>
 </html>
