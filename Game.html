@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylequiz.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="site-header__container" id="navContainer">
+        <button class="toggle__button" id="navToggleButton">&#9776;</button>
+        <div class="site-header__search-container" id="navSearchContainer">
+          <form class="site-header__search">
+            <input type="text" class="input" placeholder="Search.." />
+            <button id="navSearchButton" class="navSearchButton">Search</button>
+          </form>
+        </div>
+      </div>
+      <a name="top"></a>
+      <div class="Positioning">
+        <a href="#top"
+          ><img
+            src="eb6822b7864d986d1b02236573fd4f91.png"
+            width="80px"
+            height="100px"
+        /></a>
+      </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="Game.html">Game</a>
+          </li>
+          <li>
+            <a href="images.html">Images</a>
+          </li>
+          <li>
+            <a href="FLocations.html">Loctions</a>
+          </li>
+          <li>
+            <a href="Login.html">Login</a>
+          </li>
+          <li>
+            <a href="https://www.imdb.com/title/tt0108778/" target="_blank"
+              >IMDB</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="content">
+      <div class="gameparstyle">
+        <div class="GamebtnContainer" id="GamebtnContainer">
+          <img src="TOWTEmbryos.jpg" width="100%">
+          <button class="StartGame" id="StartGame">Start Game</button>
+        </div>
+        <div class="quiz-container" id="quiz-container">
+          <div class="quiz-header">
+            <h2 id="question" class="question">Question Text</h2>
+            <ul>
+              <li>
+                <input type="radio" name="answer" id="a" class="answer" />
+                <label for="a" id="a_text">Answer</label>
+              </li>
+              <li>
+                <input type="radio" name="answer" id="b" class="answer" />
+                <label for="b" id="b_text">Answer</label>
+              </li>
+              <li>
+                <input type="radio" name="answer" id="c" class="answer" />
+                <label for="c" id="c_text">Answer</label>
+              </li>
+              <li>
+                <input type="radio" name="answer" id="d" class="answer" />
+                <label for="d" id="d_text">Answer</label>
+              </li>
+            </ul>
+          </div>
+          <button id="submit" class="StartGame">Submit</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleNav() {
+        let aside = document.getElementById("sidebar");
+        aside.classList.toggle("sidebar--active");
+      }
+
+      let button = document.getElementById("navToggleButton");
+      button.addEventListener("click", toggleNav);
+
+      function hidestart() {
+        let GamebtnContainer = document.getElementById("GamebtnContainer");
+        GamebtnContainer.classList.toggle("GamebtnContainer--active");
+        let quizcontainer = document.getElementById("quiz-container");
+        quizcontainer.classList.toggle("quiz-container--active");
+      }
+      let startbutton = document.getElementById("StartGame");
+      startbutton.addEventListener("click", hidestart);
+      const quizData = [
+    {
+        question: "How many times was Ross legally divorced?",
+        a: "Twice",
+        b: "Three times",
+        c: "Five times",
+        d: "Six times",
+        correct: "b",
+    },
+    {
+        question: "Joey and Phoebe found Tag’s sweater in Rachel’s apartment, assuming he’s her baby’s father. What color is the sweater?",
+        a: "Blue",
+        b: "Green",
+        c: "Red",
+        d: "Black",
+        correct: "c",
+    },
+    {
+        question: "How many times did Chandler and Janice break up during the entirety of Friends?",
+        a: "Just once",
+        b: "Two times ",
+        c: "Five times",
+        d: "Eight times",
+        correct: "c",
+    },
+    {
+        question: "Joey doesn’t share...",
+        a: "Women",
+        b: "Pillows",
+        c: "Clothes",
+        d: "Food",
+        correct: "d",
+    },
+];
+const quiz = document.getElementById('quiz-container')
+const answerEls = document.querySelectorAll('.answer')
+const questionEl = document.getElementById('question')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const submitBtn = document.getElementById('submit')
+let currentQuiz = 0
+let score = 0
+loadQuiz()
+function loadQuiz() {
+    deselectAnswers()
+    const currentQuizData = quizData[currentQuiz]
+    questionEl.innerText = currentQuizData.question
+    a_text.innerText = currentQuizData.a
+    b_text.innerText = currentQuizData.b
+    c_text.innerText = currentQuizData.c
+    d_text.innerText = currentQuizData.d
+}
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false)
+}
+function getSelected() {
+    let answer
+    answerEls.forEach(answerEl => {
+        if (answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+    return answer
+}
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    if (answer) {
+        if (answer === quizData[currentQuiz].correct) {
+            score++
+        }
+        currentQuiz++
+        if (currentQuiz < quizData.length) {
+            loadQuiz()
+        } else {
+            quiz.innerHTML = `
+           <h1>You answered ${score}/${quizData.length} questions correctly</h1>
+           <img src="win.gif"  width="100%">
+           <button onclick="location.reload()" class="StartGame">Reload</button>
+           `
+        }
+    }
+})
+
+    </script>
+  </body>
+</html>

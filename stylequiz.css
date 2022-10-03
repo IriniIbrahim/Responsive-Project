@@ -1,0 +1,80 @@
+.gameparstyle {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-40%, 0%);
+  border: 3px dashed blueviolet;
+}
+.StartGame {
+  font-size: 25px;
+  font-weight: 500;
+  color: #c89ef0;
+  padding: 15px 30px;
+  outline: none;
+  border: black solid 1px;
+  border-radius: 5px;
+  background: darkcyan;
+  cursor: pointer;
+  box-shadow: #222222c1;
+}
+.GamebtnContainer{
+    top: 30%;
+}
+.GamebtnContainer--active{
+    display: none;
+}
+.quiz-container {
+ 
+  display: none;
+}
+.quiz-container--active {
+  display:block;
+   background-color: #222222c1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 100%;
+}
+.quiz-header {
+  padding: 1rem;
+}
+.question {
+  padding: 3rem;
+  text-align: center;
+  margin: 0;
+  background-color: #c89ef08c;
+}
+ul {
+  list-style-type: none;
+  padding: 1;
+}
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: white;
+}
+ul li label {
+  cursor: pointer;
+}
+.StartGame {
+  background-color: darkcyan;
+  color: #c89ef0;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1.3rem;
+  border: black solid 0.2rem;
+}
+.StartGame:hover {
+   color: red;
+  box-shadow: 5px 5px #7000a36e;
+}
+.StartGame:focus {
+  outline: none;
+  box-shadow: 5px 5px #7000a36e;
+  background-color: cyan;
+}
+h1{
+    color: white;
+}
