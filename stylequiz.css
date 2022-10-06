@@ -5,18 +5,6 @@
   transform: translate(-40%, 0%);
   border: 3px dashed blueviolet;
 }
-.StartGame {
-  font-size: 25px;
-  font-weight: 500;
-  color: #c89ef0;
-  padding: 15px 30px;
-  outline: none;
-  border: black solid 1px;
-  border-radius: 5px;
-  background: darkcyan;
-  cursor: pointer;
-  box-shadow: #222222c1;
-}
 .GamebtnContainer{
     top: 30%;
 }
@@ -24,7 +12,6 @@
     display: none;
 }
 .quiz-container {
- 
   display: none;
 }
 .quiz-container--active {
@@ -43,16 +30,16 @@
   margin: 0;
   background-color: #c89ef08c;
 }
-ul {
+.ulgame {
   list-style-type: none;
   padding: 1;
 }
-ul li {
+.ligame {
   font-size: 1.2rem;
   margin: 1rem 0;
   color: white;
 }
-ul li label {
+.labelgame {
   cursor: pointer;
 }
 .StartGame {
